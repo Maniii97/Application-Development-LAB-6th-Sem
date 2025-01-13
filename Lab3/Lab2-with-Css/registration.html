@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title" name="title">Registration Form</title>
+    <link rel="stylesheet" href="styles.css" id="css" name="css">
+    <style id="document-style" name="document-style">
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="file"] {
+            padding: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="body" name="body">
+    <header style="background-color: #007BFF;;
+    color: white;
+    padding: 1px;
+    text-align: center;">
+        <h1>Registration Form</h1> 
+    </header>
+    <div id="form-container" name="form-container" class="form-container">
+        <form id="registration-form" name="registration-form">
+            <table id="form-table" name="form-table">
+                <tr id="name-row" name="name-row">
+                    <td id="name-label-cell" name="name-label-cell">Name:</td>
+                    <td id="name-input-cell" name="name-input-cell"><input id="name" name="name" type="text" required></td>
+                </tr>
+                <tr id="id-row" name="id-row">
+                    <td id="id-label-cell" name="id-label-cell">ID:</td>
+                    <td id="id-input-cell" name="id-input-cell"><input id="id" name="id" type="text" required></td>
+                </tr>
+                <tr id="password-row" name="password-row">
+                    <td id="password-label-cell" name="password-label-cell">Password:</td>
+                    <td id="password-input-cell" name="password-input-cell"><input id="password" name="password" type="password" required></td>
+                </tr>
+                <tr id="email-row" name="email-row">
+                    <td id="email-label-cell" name="email-label-cell">E-Mail ID:</td>
+                    <td id="email-input-cell" name="email-input-cell"><input id="email" name="email" type="email" required></td>
+                </tr>
+                <tr id="age-row" name="age-row">
+                    <td id="age-label-cell" name="age-label-cell">Age:</td>
+                    <td id="age-input-cell" name="age-input-cell"><input id="age" name="age" type="number" required></td>
+                </tr>
+                <tr id="gender-row" name="gender-row">
+                    <td id="gender-label-cell" name="gender-label-cell">Gender:</td>
+                    <td id="gender-input-cell" name="gender-input-cell">
+                        <input id="gender-male" name="gender" type="radio" value="male" required> Male
+                        <input id="gender-female" name="gender" type="radio" value="female" required> Female
+                    </td>
+                </tr>
+                <tr id="address-row" name="address-row">
+                    <td id="address-label-cell" name="address-label-cell">College Address:</td>
+                    <td id="address-input-cell" name="address-input-cell"><textarea id="address" name="address" required></textarea></td>
+                </tr>
+                <tr id="branch-row" name="branch-row">
+                    <td id="branch-label-cell" name="branch-label-cell">Branch:</td>
+                    <td id="branch-input-cell" name="branch-input-cell">
+                        <select id="branch" name="branch" required>
+                            <option value="cse">CSE</option>
+                            <option value="ece">ECE</option>
+                            <option value="eee">EEE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="skills-row" name="skills-row">
+                    <td id="skills-label-cell" name="skills-label-cell">Technical Skills:</td>
+                    <td id="skills-input-cell" name="skills-input-cell">
+                        <input id="skill-c" name="skills" type="checkbox" value="C"> C
+                        <input id="skill-java" name="skills" type="checkbox" value="Java"> Java
+                        <input id="skill-python" name="skills" type="checkbox" value="Python"> Python
+                        <input id="skill-jsp" name="skills" type="checkbox" value="JSP"> JSP
+                    </td>
+                </tr>
+                <tr id="resume-row" name="resume-row">
+                    <td id="resume-label-cell" name="resume-label-cell">Resume Upload:</td>
+                    <td id="resume-input-cell" name="resume-input-cell"><input id="resume" name="resume" type="file" required></td>
+                </tr>
+                <tr id="buttons-row" name="buttons-row">
+                    <td id="buttons-cell" name="buttons-cell" colspan="2" class="center">
+                        <button id="submit-button" name="submit-button" type="submit">Submit</button>
+                        <button id="reset-button" name="reset-button" type="reset">Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <footer>Made with ❤️ by Mani Jha (2205567) </footer>
+</body>
+</html>

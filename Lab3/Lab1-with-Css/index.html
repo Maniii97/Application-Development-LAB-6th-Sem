@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title" name="title">e-Exam-Portal</title>
+    <link id="stylesheet" name="stylesheet" rel="stylesheet" href="styles.css">
+    <style id="document-style" name="document-style">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: #333;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+        #main-content {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #login-register {
+            text-align: center;
+            margin: 20px 0;
+        }
+        footer {
+            background-color: #f0f0f0;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body id="body" name="body">
+    <header id="header" name="header">
+        <h1 id="main-title" name="main-title">Welcome to e-Exam Portal</h1>
+        <nav id="navigation" name="navigation">
+            <ul id="nav-list" name="nav-list">
+                <li id="nav-home" name="nav-home"><a href="home.html">Home</a></li>
+                <li id="nav-about" name="nav-about"><a href="about.html">About</a></li>
+                <li id="nav-e-exam" name="nav-e-exam"><a href="e-exam.html">e-Exam</a></li>
+                <li id="nav-forum" name="nav-forum"><a href="forum.html">Openforum</a></li>
+                <li id="nav-repo" name="nav-repo"><a href="repo.html">e-Repository</a></li>
+                <li id="nav-wall" name="nav-wall"><a href="wall.html">MyWall</a></li>
+                <li id="nav-faq" name="nav-faq"><a href="faq.html">FAQ</a></li>
+                <li id="nav-contact" name="nav-contact"><a href="contact.html">Contact</a></li>
+                <li id="nav-login" name="nav-login"><a href="login.html">Login</a></li>
+                <li id="nav-register" name="nav-register"><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main-content" name="main-content">
+        <img id="main-image" name="main-image" src="bg.jpeg" alt="e-Exam Portal" style="width: 100%; max-width: 400px;">
+        <p id="description" name="description">
+            The e-Exam Portal provides services such as online exams, discussion forums, 
+            repositories for educational resources, and personalized dashboards. Our aim 
+            is to make learning seamless and accessible to everyone.
+        </p>
+    </div>
+    <div id="search-container" name="search-container">
+        <input id="search-input" name="search-input" type="text" placeholder="Search here..." style="width: 200px;">
+        <button id="search-button" name="search-button">Search</button>
+    </div>
+    <div id="login-register" name="login-register">
+        <h2 id="dashboard-title" name="dashboard-title">Login/Register Dashboard</h2>
+        <a id="login-link" name="login-link" href="#">Login</a> | <a id="register-link" name="register-link" href="register.html">Register</a>
+    </div>
+    <footer id="footer" name="footer">
+        <p id="footer-text" name="footer-text">Made with ❤️ by Mani Jha (2205567)</p>
+    </footer>
+</body>
+</html>
