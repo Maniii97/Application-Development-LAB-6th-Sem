@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "script.js"></script>
+    <script type="text/javascript">
+        function display_leap(event) {
+            event.preventDefault();
+            var number = document.getElementById("numberInput").value;
+            var isLeap = (number % 4 == 0 && number % 100 != 0) || number % 400 == 0;
+            document.getElementById("displayy").textContent = isLeap ? "Leap Year" : "Not a Leap Year";
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="display_leap(event)">
+        <label for="numberInput">Number:</label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="displayy"></p>
+</body>
+</html>

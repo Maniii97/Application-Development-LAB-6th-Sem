@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "script.js"></script>
+    <script>
+        function display_age(event){
+            event.preventDefault();
+            var num1 = document.getElementById("numberInput").value;
+            let check = false;
+            if(num1 >= 18) check = true;
+            document.getElementById("displayy").textContent = `You are ${check ? "eligible" : "not elegible"} to vote`;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="display_age(event)">
+        <label for="numberInput">Enter age : </label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="displayy"></p>
+</body>
+</html>
