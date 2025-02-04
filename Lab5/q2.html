@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Name List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 8px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px;
+        font-size: 16px;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 18px;
+        margin-top: 20px;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Enter Your Name</h2>
+    <input type="text" id="nameInput" placeholder="Your Name" />
+    <button onclick="addName()">Add Name</button>
+    <p id="nameList"></p>
+
+    <script>
+      let names = [];
+
+      function addName() {
+        const name = document.getElementById("nameInput").value;
+        if (name) {
+          names.push(name);
+          displayNames();
+          document.getElementById("nameInput").value = "";
+        }
+      }
+
+      function displayNames() {
+        let nameString = "Names: ";
+        for (let i = 0; i < names.length; i++) {
+          nameString += names[i];
+          if (i < names.length - 1) {
+            nameString += ", ";
+          }
+        }
+        document.getElementById("nameList").textContent = nameString;
+      }
+    </script>
+  </body>
+</html>
