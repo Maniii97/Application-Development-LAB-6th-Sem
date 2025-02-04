@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vovel Replacement</title>
+    <script>
+        const validate = (event) => {
+            event.preventDefault();
+            const text = document.getElementById("text").value;
+            const pattern = /[aeiou]/gi;
+            const newText = text.replace(pattern, "*");
+            document.getElementById("result").textContent = newText;
+        };
+
+    </script>
+  </head>
+  <body>
+    <h1>Vovel Replacement</h1>
+    <br />
+    <form onsubmit="validate(event)">
+      Enter Text <br />
+      <textarea id="text"> </textarea> <br />
+      <button type="submit">Search</button><br />
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+  </body>
+</html>

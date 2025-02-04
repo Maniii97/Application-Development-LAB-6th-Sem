@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Form</title>
+    <script>
+      const validate = (event) => {
+        event.preventDefault();
+        const fields = [
+          {
+            name: "name",
+            pattern: /^[a-zA-Z ]{3,30}$/,
+            errorMessage: "Invalid Name",
+          },
+          { name: "id", pattern: /^[0-9]{4,10}$/, errorMessage: "Invalid ID" },
+          {
+            name: "password",
+            pattern: /^[a-zA-Z0-9]{8,20}$/,
+            errorMessage: "Invalid Password",
+          },
+          {
+            name: "email",
+            pattern: /^[a-zA-Z0-9._-]+@kiit\.ac\.in$/,
+            errorMessage: "Invalid Email",
+          },
+          { name: "age", pattern: /^[0-9]{2}$/, errorMessage: "Invalid Age" },
+        ];
+
+        for (const field of fields) {
+          const value = document.querySelector(
+            `input[name='${field.name}']`
+          ).value;
+          if (!field.pattern.test(value)) {
+            alert(field.errorMessage);
+            return;
+          }
+        }
+        document.getElementById("result").textContent =
+          "Registration Successful";
+      };
+    </script>
+  </head>
+  <body>
+    <form onsubmit="validate(event)">
+      <table border="1" style="margin: auto; padding: 10px">
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+          <td>ID:</td>
+          <td><input type="text" name="id" /></td>
+        </tr>
+        <tr>
+          <td>Password:</td>
+          <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+          <td>E-Mail ID:</td>
+          <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td>Age:</td>
+          <td><input type="number" name="age" /></td>
+        </tr>
+        <tr>
+          <td>Gender:</td>
+          <td>
+            <input type="radio" name="gender" value="male" /> Male
+            <input type="radio" name="gender" value="female" /> Female
+          </td>
+        </tr>
+        <tr>
+          <td>College Address:</td>
+          <td><textarea name="address"></textarea></td>
+        </tr>
+        <tr>
+          <td>Branch:</td>
+          <td>
+            <select name="branch">
+              <option value="cse">CSE</option>
+              <option value="ece">ECE</option>
+              <option value="eee">EEE</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Technical Skills:</td>
+          <td>
+            <input type="checkbox" name="skills" value="C" /> C
+            <input type="checkbox" name="skills" value="Java" /> Java
+            <input type="checkbox" name="skills" value="Python" /> Python
+            <input type="checkbox" name="skills" value="JSP" /> JSP
+          </td>
+        </tr>
+        <tr>
+          <td>Resume Upload:</td>
+          <td><input type="file" name="resume" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <p id="result"></p>
+  </body>
+</html>

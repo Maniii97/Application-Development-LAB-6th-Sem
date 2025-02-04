@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Validator</title>
+    <script>
+      const validate = (event) => {
+        event.preventDefault();
+        const email = document.querySelector("input").value;
+        const pattern = /^[a-zA-Z0-9._-]+@kiit\.ac\.in$/;
+        if (pattern.test(email)) {
+          const message = `Email address ${email} is valid`;
+          document.getElementById("result").textContent = message;
+        } else {
+          document.getElementById("result").textContent =
+            "Invalid email address";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Email Validator</h1>
+    <br />
+    <form onsubmit="validate(event)">
+      Enter your kiit email: <br />
+      <input type="text" id="email" />
+      <button type="submit">Validate</button><br />
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+  </body>
+</html>

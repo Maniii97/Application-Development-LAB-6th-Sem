@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Word search</title>
+    <script>
+      const validate = (event) => {
+        event.preventDefault();
+        const text = document.getElementById("text").value;
+        const word = document.getElementById("word").value;
+
+        const pattern = new RegExp(word, "i"); // case insensitive -> i
+
+        if (pattern.test(text)) {
+          document.getElementById("result").textContent = "Word found";
+        } else {
+          document.getElementById("result").textContent = "Word not found";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Word Search</h1>
+    <br />
+    <form onsubmit="validate(event)">
+      Enter String <br />
+      <input type="text" id="text" /> <br />
+      Enter Word to search<br />
+      <input type="text" id="word" />
+
+      <button type="submit">Search</button><br />
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+  </body>
+</html>

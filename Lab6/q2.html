@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Validator</title>
+    <script>
+      const validate = (event) => {
+        event.preventDefault();
+        const phone = document.querySelector("input").value;
+        const pattern = /^[0-9]{10}$/;
+        if (pattern.test(phone)) {
+          const message = `Phone number : ${phone} is valid`;
+          document.getElementById("result").textContent = message;
+        } else {
+          document.getElementById("result").textContent =
+            "Invalid phone number";
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Phone Validator</h1>
+    <br />
+    <form onsubmit="validate(event)">
+      Enter your Phone number: <br />
+      <input type="number" id="number" />
+      <button type="submit">Validate</button><br />
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+  </body>
+</html>

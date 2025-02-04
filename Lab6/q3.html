@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    <script>
+      const validate = (event) => {
+        event.preventDefault();
+        const password = document.querySelector("input").value;
+        const strength = {
+          1: "Bad",
+          2: "Weak",
+          3: "Good",
+          4: "Strong",
+        };
+        // if lenght less than 8 -> bad
+        // if password contains only numbers/alphabets -> weak
+        // if password contains numbers and alphabets -> good
+        // if password contains special characters -> strong
+
+        let score = 0;
+        if (password.length >= 8) {
+          score++;
+        }
+        if (
+          /[0-9]/.test(password) ||
+          /[a-z]/.test(password) ||
+          /[A-Z]/.test(password)
+        ) {
+          score++;
+        }
+        if (
+          /[0-9]/.test(password) &&
+          /[a-z]/.test(password) &&
+          /[A-Z]/.test(password)
+        ) {
+          score++;
+        }
+        if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password)) {
+          score++;
+        }
+        const message = `${strength[score]} Password`;
+        document.getElementById("result").textContent = message;
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Password Strength Checker</h1>
+    <br />
+    <form onsubmit="validate(event)">
+      Enter Password: <br />
+      <input type="text" id="password" />
+      <button type="submit">Validate</button><br />
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+  </body>
+</html>

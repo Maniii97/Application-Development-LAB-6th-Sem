@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Replacement</title>
+    <script>
+        const displayMessage = (event) => {
+            event.preventDefault();
+            const text = document.getElementById("text").value;
+            document.getElementById("result").textContent = text;
+        };
+
+        const replaceWord = (event) => {
+            event.preventDefault();
+            const text = document.getElementById("text").value;
+            const word = document.getElementById("word").value;
+            const userInput = prompt("Please enter the replacement word:");
+            if (userInput !== null) {
+                const pattern = new RegExp(word, 'gi');
+                const newText = text.replace(pattern, userInput);
+                document.getElementById("result").textContent = newText;
+            } else {
+                alert("You have cancelled the prompt");
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Message Replacement</h1>
+    <form>
+        <label for="text">Enter Text:</label><br>
+        <textarea id="text" name="text"></textarea><br>
+        <label for="word">Enter Word to Replace:</label><br>
+        <input type="text" id="word" name="word"><br>
+        <button type="submit" onclick="displayMessage(event)">Show Message</button>
+        <button type="button" onclick="replaceWord(event)">Replace Word</button>
+    </form>
+    <p>Message : </p>
+    <p id="result"></p>
+</body>
+</html>
